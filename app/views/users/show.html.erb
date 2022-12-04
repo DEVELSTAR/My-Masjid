@@ -1,0 +1,14 @@
+<div><%= @user.name  %></div>
+<div><%= @user.phone  %></div>
+<div><%= @user.city  %></div>
+<div><%= @user.village  %></div>
+<div><% if @user.imam.present? %>
+	    Imam
+		<div>
+		  <strong>status:</strong>
+		  <% User::STATUSES.each do |status| %>
+		    <%= link_to_unless @user.status.eql?(status.to_s), status, update_status_user_path(@user, status: status), data: {turbo_method: :put} %>
+		  <% end %>
+		</div>
+	  <% end %>
+</div>
