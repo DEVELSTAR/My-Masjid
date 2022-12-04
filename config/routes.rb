@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :masjids
   root 'home#index'
 end

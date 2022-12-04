@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   STATUSES = [:Working, :not_working]
+  has_many :masjids, dependent: :destroy
 end

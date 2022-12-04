@@ -5,7 +5,7 @@
 	<div class="links">
 		<div class="link">Admin</div>
 		<div class="link"><%= link_to current_user.name, user_path(current_user) %></div>
-		<div class="link">Add new Masjid</div>
-		<div class="link">Find new Masjid</div>
+		<div class="link"><%= link_to "Add new Masjid", new_masjid_path %></div>
+		<div class="link"><%= link_to "Find Masjid", masjids_path %></div>
 	</div>
 </div>

@@ -1,0 +1,10 @@
+<div class="posts-form">
+  <%= form_with model: @masjid do |f| %>
+    <div><%= f.text_field :name, placeholder: "Masjid name...", class: "post-form-title" %></div>
+    <div><%= f.text_field :city, placeholder: "Masjid city...", class: "post-form-title" %>
+    <div><%= f.text_field :village, placeholder: "Masjid village    ...", class: "post-form-title" %>
+    </div>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.submit 'Create Masjid', class: "comment-btn" %>
+  <% end %>
+</div>
