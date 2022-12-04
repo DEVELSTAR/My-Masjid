@@ -7,6 +7,16 @@ class MasjidsController < ApplicationController
 	def show
 		@masjid = Masjid.find(params[:id])
 	end
+	
+	def update_status
+		@masjid = Masjid.find(params[:id])
+		if params[:status].present? && Masjid::STATUSES.include?(params[:status].to_sym)
+		  @masjid.update(status: params[:status])
+		  redirect_to @masjid
+		else
+		  redirect_to @masjid
+		end
+	end 
 
 	def new
 		@masjid = Masjid.new

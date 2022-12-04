@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_04_134226) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_04_151628) do
   create_table "masjids", force: :cascade do |t|
     t.string "name"
     t.string "city"
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_134226) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["user_id"], name: "index_masjids_on_user_id"
   end
 

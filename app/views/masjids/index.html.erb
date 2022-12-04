@@ -1,5 +1,6 @@
+<h1>Index page</h1>
 <div>
 	<% @masjids.each do |m| %>
-	<%= m.name.titleize %>
+	<%= link_to m.name.titleize, masjid_path(m) %>
 	<% end %>
 </div>
