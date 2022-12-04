@@ -1,0 +1,12 @@
+.home-index{
+	border: 2px solid red;
+}
+.home-index .logo{
+	border: 2px solid red;
+}
+.home-index .logo .img{
+	border: 2px solid black;
+}
+.home-index .links{
+	border: 2px solid red;
+}
