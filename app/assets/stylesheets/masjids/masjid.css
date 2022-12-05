@@ -9,3 +9,6 @@
 .masjid .name{
 	font-size: 1.5rem;
 }
+.masjid .masjid-address{
+	color: gray;
+}

@@ -6,7 +6,7 @@
 		<% end %>
 		<div><strong>Mutawalli: </strong>Ashiq Ahmad</div>
 		<div><strong>Address: </strong><%= @masjid.village.humanize %> <%= @masjid.city %></div>
-			<div><% if @masjid.user == current_user %>
+		<div><% if @masjid.user == current_user %>
 				<div>
 				  <strong>status:</strong>
 				  <% Masjid::STATUSES.each do |status| %>
@@ -14,7 +14,7 @@
 				  <% end %>
 				</div>
 			<% else %>
-			<strong>Status: </strong><%= @masjid.status %>
+			    <strong>Status: </strong><%= @masjid.status %>
 			<% end %>
 	    </div>
     </div>

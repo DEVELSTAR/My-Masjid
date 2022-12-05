@@ -4,7 +4,11 @@
 		<div>My-Masjid</div>
 	</div>
 	<div class="links">
-		<a href="<%= user_path(current_user) %>" class="link" ><%= current_user.name %></a>
+		<% if user_signed_in? %>
+		  <a href="<%= user_path(current_user) %>" class="link" ><%= current_user.name %></a>
+		<% else %>
+		  <a href="<%= new_user_session_path %>" class="link" >Profile</a>
+		<% end %>
 		<a href="<%= new_masjid_path %>" class="link" >Add new Masjid</a>
 		<a href="<%= empty_masjid_masjids_path %>" class="link" >Find a Masjid</a>
 		<a href="<%= job_imam_users_path %>" class="link" >Find an Imam</a>

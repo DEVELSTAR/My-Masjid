@@ -1,4 +1,5 @@
 class MasjidsController < ApplicationController
+    before_action :authenticate_user!, only: [ :update_status, :new]
 
 	def index
 		@masjids = Masjid.all
