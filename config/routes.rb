@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   
   resources :users do
     member do
-      get :imam
       put :update_status
     end
 
@@ -23,7 +22,5 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'home/all_imam'
-  get 'home/job_imam'
   root 'home#index'
 end
