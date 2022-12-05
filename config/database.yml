@@ -25,4 +25,4 @@ production:
   url: <%= ENV["DATABASE_URL"] %>
   database: db/production.sqlite3
   username: My-Masjid
-  password: <%= ENV["befiend_DATABASE_PASSWORD"] %>
+  password: <%= ENV["My-Masjid_DATABASE_PASSWORD"] %>
