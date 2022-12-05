@@ -1,7 +1,9 @@
 <div class="masjids-show">
 	<div class="masjid-show">
 		<div class="name"><%= @masjid.name.titleize %></div>
+		<% if @masjid.status == "no_need" %>
 		<div><strong>Imam: </strong>Mohd Nawaj shareef</div>
+		<% end %>
 		<div><strong>Mutawalli: </strong>Ashiq Ahmad</div>
 		<div><strong>Address: </strong><%= @masjid.village %> <%= @masjid.city %></div>
 			<div><% if @masjid.user == current_user %>

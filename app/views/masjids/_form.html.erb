@@ -1,7 +1,8 @@
 <div class="masjids-form">
   <div class="masjid-form">
+    <h3>Masjid Details</h3>
     <%= form_with model: @masjid do |f| %>
-      <div><%= f.text_field :name, placeholder: "Masjid name...", class: "name" %></div>
+      <div><%= f.text_field :name, autofocus: true, placeholder: "Masjid name...", class: "name" %></div>
       <div><%= f.text_field :city, placeholder: "Masjid city...", class: "name" %>
       <div><%= f.text_field :village, placeholder: "Masjid village    ...", class: "name" %>
       </div>

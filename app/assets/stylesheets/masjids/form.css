@@ -1,12 +1,19 @@
 .masjids-form{
 	height: 100vh;
 	padding: 2rem;
-	background-color: whitesmoke;
+	background-color: #4cb050;
 	font-weight: bolder;
 }
 .masjid-form{
 	background-color: white;
 	font-size: 2rem;
+	box-shadow: 10px 10px 9px -6px rgba(0,0,0,0.75);
+}
+.masjid-form h3{
+	text-align: center;
+	margin-top: 2rem;
+	padding-top: 2rem;
+	margin-bottom: 1rem;
 }
 .masjid-form input{
 	font-size: 1.3rem;
@@ -14,7 +21,7 @@
 	border-bottom: 2px solid black;
 	outline: none;
 	margin-bottom: 1.3rem;
-	padding: .7rem;
+	padding: .6rem;
 }
 .masjid-form input[type=submit]{
 	border: none;

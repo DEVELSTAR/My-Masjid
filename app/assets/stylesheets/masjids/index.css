@@ -1,8 +1,14 @@
 .masjids-index{
-	background-color: whitesmoke;
+	background-color: #4cb050;
 	height: 100vh;
 }
 .masjids-index h1{
 	text-align: center;
-	padding-top: 2rem;
+	padding-top: 3rem;
+}
+.index-masjid{
+	margin-top: 2rem;
+	border-radius: 15px;
+	padding: 1rem;
+	font-size: 1.2rem;
 }
