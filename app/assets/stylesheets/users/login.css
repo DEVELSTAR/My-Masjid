@@ -1,0 +1,109 @@
+
+.login{
+	height: 100vh;
+	border: 1px solid white;
+	background-color: #4cb050;
+}
+.login-logo{
+	font-weight: bolder;
+	text-align: center;
+}
+.login-logo img{
+	height: 80%;
+	width: 60%;
+	margin: auto;
+	text-align: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.login-logo h2{
+	margin-top: -2.5rem;
+	font-size: 2rem;
+}
+.without-login-link{
+	text-align: center;
+}
+.login .login-box{
+	border: .1px solid whitesmoke;
+	background-color: white;
+	width: 90%;
+	margin: auto;
+	margin-top: 4rem;
+	border-radius: 20px;
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,.4);
+}
+.login .login-box h2{
+	text-align: center;
+	padding-top: 1.5rem;
+}
+.login .login-box .login-fields{
+	padding-left: 1rem ;
+	padding-right: 1rem ;
+}
+.login .login-box .login-fields .fieldt{
+	width: 100%;
+}
+.login .login-box .login-fields .fieldl{
+	font-size: 1.3rem;
+}
+.login .login-box .login-fields .field{
+	margin-top: 1.2rem;
+}
+.login .login-box input{
+	border: none;
+    border-bottom: 2px solid black;
+	margin-top: 0.2rem;
+	outline: none;
+    font-size: 1.3rem;
+    background: none;
+}
+.login-checkbox{
+	display: flex;
+}
+.login-checkbox input{
+	margin-left: 1rem;
+	width: 80px;
+}
+.login .login-box .login-btn{
+	width: 70%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: -23px;
+	border-radius: 20px;
+	background-color: #2a00e9;
+	color: white;
+	font-weight: bolder;
+	font-size: 1.5rem;
+	height: 3rem;
+    border: none;
+    cursor: pointer;
+    font-family: 'Teko', sans-serif;
+}
+.login .links{
+	text-align: center;
+	margin-top: 2.5rem;
+}
+@media only screen and (max-height: 800px) {
+	.login .login-box{
+		margin-top: 5rem;
+	}
+	.login .login-box .login-btn{
+		margin-top: 1rem;
+	    box-shadow: 10px 10px 5px 0px rgba(0,0,0,.3);
+	}
+}
+@media only screen and (max-height: 700px) {
+	.login .login-box{
+		margin-top: 3rem;
+	}
+	.login .login-box .login-btn{
+		margin-top: 1rem;
+	}
+}
+@media only screen and (max-height: 500px) {
+	.login-logo{
+		display: none;
+	}
+}
