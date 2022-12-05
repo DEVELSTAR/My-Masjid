@@ -9,8 +9,9 @@ class MasjidsController < ApplicationController
 	end
 	
 	def empty_masjid
-
+		@masjids = Masjid.where(status: "Need_a_imam")
     end
+
 	def update_status
 		@masjid = Masjid.find(params[:id])
 		if params[:status].present? && Masjid::STATUSES.include?(params[:status].to_sym)

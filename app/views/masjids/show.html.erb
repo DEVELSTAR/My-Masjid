@@ -8,5 +8,7 @@
 		    <%= link_to_unless @masjid.status.eql?(status.to_s), status, update_status_masjid_path(@masjid, status: status), data: {turbo_method: :put} %>
 		  <% end %>
 		</div>
+	<% else %>
+	<strong>Status </strong><%= @masjid.status %>
 	<% end %>
 </div>
