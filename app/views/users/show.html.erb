@@ -1,18 +1,19 @@
-<div><%= @user.name  %></div>
-<div><%= @user.phone  %></div>
-<div><%= @user.city  %></div>
-<div><%= @user.village  %></div>
-<div><% if @user.imam.present? %>
-	    Imam
-		<div>
-		  <strong>status:</strong>
-		  <% User::STATUSES.each do |status| %>
-		    <%= link_to_unless @user.status.eql?(status.to_s), status, update_status_user_path(@user, status: status), data: {turbo_method: :put} %>
+<div class="users-show">
+	<div class="user-show">
+		<div><strong>Name: </strong><%= @user.name  %></div>
+		<div><strong>Phone no:</strong><%= @user.phone  %></div>
+	    <div><% if @user.imam.present? %>
+			<div><strong>Qualifications: </strong>kari</div>
+			<div><strong>Experience: </strong>2 years</div>
+			<div><strong>Address: </strong><%= @user.village  %> <%= @user.city  %></div>
+			<div>
+			  <strong>status:</strong>
+			  <% User::STATUSES.each do |status| %>
+			    <%= link_to_unless @user.status.eql?(status.to_s), status, update_status_user_path(@user, status: status), data: {turbo_method: :put} %>
+			  <% end %>
+			</div>
+		  <% else %>
+			<div><strong>Address: </strong><%= @user.village  %> <%= @user.city  %></div>
 		  <% end %>
 		</div>
-	  <% end %>
 </div>
-
-
-qualification Hafiz, Kari or maulana
-experience

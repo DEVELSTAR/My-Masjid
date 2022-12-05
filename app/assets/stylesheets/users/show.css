@@ -1,0 +1,13 @@
+.users-show{
+	height: 100vh;
+	background-color: whitesmoke;
+	padding: 2rem 1rem;
+}
+.user-show{
+    background-color: white;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+.user-show strong{
+	font-size: 1rem;
+}
