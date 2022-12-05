@@ -1,6 +1,6 @@
 <% @masjids.each do |m| %>
   <div class="masjid">
     <div><%= link_to m.name.titleize, masjid_path(m), class: "name" %></div>
-    <div class="masjid-address">address: <%= m.village.humanize  %> <%= m.city  %></div>
+    <div class="gray">address: <%= m.village.humanize  %> <%= m.city  %></div>
   </div>
 <% end %>

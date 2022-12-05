@@ -1,4 +1,3 @@
-
 .login{
 	height: 100vh;
 	border: 1px solid white;
@@ -7,6 +6,7 @@
 .login-logo{
 	font-weight: bolder;
 	text-align: center;
+	color: #ededdf;
 }
 .login-logo img{
 	height: 80%;
@@ -19,6 +19,7 @@
 .login-logo h2{
 	margin-top: -2.5rem;
 	font-size: 2rem;
+	color: ;
 }
 .without-login-link{
 	text-align: center;
