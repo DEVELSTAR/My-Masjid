@@ -1,34 +1,48 @@
 .home-index{
-/*	border: 5px solid red;*/
 	height: 100vh;
 	text-decoration: none;
 	background-color: #4cb050;
 }
 .home-index .logo{
-/*	border: 2px solid red;*/
 	height: 40%;
 	background-color: #4cb050;
 	text-align: center;
 }
+.home-index .logo img{
+	height: 80%;
+	width: 60%;
+	margin: auto;
+	text-align: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 .home-index .logo div{
-	padding-top: 5rem;
-	font-size: 4rem;
-	color: red;
-	font-family: cursive;
+	font-size: 2rem;
+	margin-top: -2.5rem;
+	color: #ededdf;
+	font-weight: bolder;
 }
 .home-index .links{
 	height: 60%;
 	border-radius: 10% 10% 0% 0%;
 	background-color: whitesmoke;
-	padding: 2rem 1rem;
+	padding: 3rem 1rem;
 	text-align: center;
+}
+.home-index .links a{
+	color: black;
+	font-size: 1.5rem;
 }
 .home-index .links .link{
 	display: inline-block;
 	width: 100%;
 	margin-bottom: 2rem;
-	padding: 1.3rem 0rem;
+	padding: 1rem 0rem;
 	background-color: white;
 	box-shadow: 10px 10px 9px -6px rgba(0,0,0,0.75);
 	border-radius: 15px;
+}
+
+.home-index .links{
+    box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.32);
 }

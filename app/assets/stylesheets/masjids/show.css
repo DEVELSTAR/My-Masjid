@@ -8,6 +8,7 @@
     background-color: white;
     padding: 1rem;
     font-size: 1rem;
+	box-shadow: 10px 10px 9px -6px rgba(0,0,0,0.75);
 }
 .masjid-show strong{
 	font-size: 1rem;

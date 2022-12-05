@@ -9,6 +9,7 @@
 .index-masjid{
 	margin-top: 2rem;
 	border-radius: 15px;
-	padding: 1rem;
+	padding: 2rem;
+	padding-top: 0;
 	font-size: 1.2rem;
 }
