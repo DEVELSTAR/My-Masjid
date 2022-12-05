@@ -1,14 +1,19 @@
-<h1>Show page</h1>
-<div>
-	<%= @masjid.name %>
-	<% if @masjid.user == current_user %>
-		<div>
-		  <strong>status:</strong>
-		  <% Masjid::STATUSES.each do |status| %>
-		    <%= link_to_unless @masjid.status.eql?(status.to_s), status, update_status_masjid_path(@masjid, status: status), data: {turbo_method: :put} %>
-		  <% end %>
-		</div>
-	<% else %>
-	<strong>Status </strong><%= @masjid.status %>
-	<% end %>
+<div class="masjids-show">
+	<div class="masjid-show">
+		<div class="name"><%= @masjid.name.titleize %></div>
+		<div><strong>Imam: </strong>Mohd Nawaj shareef</div>
+		<div><strong>Mutawalli: </strong>Ashiq Ahmad</div>
+		<div><strong>Address: </strong><%= @masjid.village %> <%= @masjid.city %></div>
+			<div><% if @masjid.user == current_user %>
+				<div>
+				  <strong>status:</strong>
+				  <% Masjid::STATUSES.each do |status| %>
+				    <%= link_to_unless @masjid.status.eql?(status.to_s), status, update_status_masjid_path(@masjid, status: status), data: {turbo_method: :put} %>
+				  <% end %>
+				</div>
+			<% else %>
+			<strong>Status: </strong><%= @masjid.status %>
+			<% end %>
+	    </div>
+    </div>
 </div>

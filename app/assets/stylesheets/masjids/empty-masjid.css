@@ -1,0 +1,8 @@
+.empty-masjid{
+	background-color: whitesmoke;
+	height: 100vh;
+	padding: 2rem;
+}
+.empty-masjid h3{
+	font-size: 2rem;
+}

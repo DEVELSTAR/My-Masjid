@@ -1,0 +1,19 @@
+.masjids-show{
+	background-color: whitesmoke;
+	height: 100vh;
+	padding: 2rem 1rem;
+	line-height: 2rem;
+}
+.masjid-show{
+    background-color: white;
+    padding: 1rem;
+    font-size: 1rem;
+}
+.masjid-show strong{
+	font-size: 1rem;
+}
+.masjid-show .name{
+	margin-left: 1rem;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
