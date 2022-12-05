@@ -1,3 +1,10 @@
 <% @users.each do |u|  %>
-  <%= link_to u.name, user_path(u) %>
+  <div class="imam">
+    <div class="name"><%= link_to u.name, user_path(u) %></div>
+    <% if @showing_title && u.imam %>
+      <div>Title: imam</div>  
+    <% end %>
+    <div>Phone no: <%= u.phone %></div>
+    <div>Address: <%= u.village.humanize  %> <%= u.city  %></div>
+  </div>
 <% end%>

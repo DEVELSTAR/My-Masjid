@@ -1,0 +1,11 @@
+.imam{
+	background-color: white;
+	margin-top: 1rem;
+	box-shadow: 10px 10px 9px -6px rgba(0,0,0,0.75);
+	border-radius: 15px;
+	padding: 1rem;
+	font-size: 1.2rem;
+}
+.imam .name{
+	font-size: 1.5rem;
+}

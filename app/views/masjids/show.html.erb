@@ -5,7 +5,7 @@
 		<div><strong>Imam: </strong>Mohd Nawaj shareef</div>
 		<% end %>
 		<div><strong>Mutawalli: </strong>Ashiq Ahmad</div>
-		<div><strong>Address: </strong><%= @masjid.village %> <%= @masjid.city %></div>
+		<div><strong>Address: </strong><%= @masjid.village.humanize %> <%= @masjid.city %></div>
 			<div><% if @masjid.user == current_user %>
 				<div>
 				  <strong>status:</strong>
