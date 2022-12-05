@@ -1,0 +1,11 @@
+search any imam
+<div>
+	<div>
+		<h3>Imam who want job listed here</h3>
+		<div>
+			<% if @imam.status == "not_working" %>
+			<% @imam.name %>
+			<% end %>
+		</div>
+	</div>
+</div>

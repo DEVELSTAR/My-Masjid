@@ -1,0 +1,4 @@
+<% @masjids.each do |m| %>
+<%= link_to m.name.titleize, masjid_path(m) %>
+  address: <%= m.village  %>,<%= m.city  %>
+<% end %>

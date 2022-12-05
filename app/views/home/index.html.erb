@@ -1,11 +1,14 @@
 <div class="home-index">
 	<div class="logo">
-		<div class="img"></div>
+		<div>My-Masjid</div>
 	</div>
 	<div class="links">
-		<div class="link">Admin</div>
-		<div class="link"><%= link_to current_user.name, user_path(current_user) %></div>
-		<div class="link"><%= link_to "Add new Masjid", new_masjid_path %></div>
-		<div class="link"><%= link_to "Find Masjid", masjids_path %></div>
+		<a href="<%= user_path(current_user) %>" class="link" ><%= current_user.name %></a>
+		<a href="<%= new_masjid_path %>" class="link" >Add new Masjid</a>
+		<a href="<%= empty_masjid_masjids_path %>" class="link" >Find Masjid</a>
+		<a href="<%= job_imam_users_path %>" class="link" >Find Imam</a>
+		<%= link_to "logout", destroy_user_session_path, data: {turbo_method: :delete} %>
+		<!-- <a data-turbo-method="delete" href="/users/sign_out" class="link" >Log out</a> -->
 	</div>
 </div>
+
