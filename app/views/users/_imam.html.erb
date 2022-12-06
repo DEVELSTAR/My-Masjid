@@ -6,9 +6,11 @@
     <% end %>
     <div>Phone no: <%= u.phone %></div>
     <div>Address: <%= u.village.humanize  %> <%= u.city  %></div>
+      <% if user_signed_in? %>
       <div><% if current_user.is_admin?  || current_user == u  %>
          <%= link_to "Edit", edit_user_path(u) %>
        <% end %>
       </div>
+      <% end %>
   </div>
 <% end%>

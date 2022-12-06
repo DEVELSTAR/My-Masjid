@@ -4,7 +4,9 @@
 		<div><strong>Imam: </strong><%= @masjid.imam.present? ? @masjid.imam : "unavalaible" %></div>
 		<div><strong>Mutawalli: </strong><%= @masjid.mutawalli.present? ? @masjid.mutawalli : "unavalaible" %></div>
 		<div><strong>Address: </strong><%= @masjid.village.humanize %> <%= @masjid.city %></div>
-		<div><% if current_user.is_admin? || @masjid.sub_admin == current_user.sub_admin %>
+		<div>
+        <% if user_signed_in? %>
+			<% if current_user.is_admin? || @masjid.sub_admin == current_user.sub_admin && current_user.sub_admin.present? %>
 		        <div>
 		        	<strong>Token: </strong><%= @masjid.sub_admin.present? ? @masjid.sub_admin : "unavalaible" %>
 		        </div>
@@ -20,6 +22,7 @@
 			<% else %>
 			    <strong>Status: </strong><%= @masjid.status %>
 			<% end %>
+		<% end %>
 	    </div>
     </div>
 </div>
