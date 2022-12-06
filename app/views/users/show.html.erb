@@ -21,5 +21,8 @@
 				<div><strong>Address: </strong><%= @user.village.humanize  %> <%= @user.city  %></div>
 		    <% end %>
 		</div>
-		<div><%= link_to "Edit", edit_user_path(@user)  %></div>
+		<div><% if current_user.is_admin?  || current_user == @user  %>
+			   <%= link_to "Edit", edit_user_path(@user) %>
+			 <% end %>
+	    </div>
 </div>

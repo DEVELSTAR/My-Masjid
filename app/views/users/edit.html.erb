@@ -1,6 +1,6 @@
 <div class="login">
     <div class="login-box">
-	    <h2>Edit <%= current_user.is_admin? ? "(Admin)" : "user" %></h2>
+	    <h2>Edit <%= @user.is_admin? ? "(Admin)" : "user" %></h2>
 	    <div class="login-fields">
 		  <%= form_with model: current_user, local: true do |f| %>
 		    <div class="field">
@@ -18,11 +18,13 @@
 	          <div><%= f.check_box :imam, class: "fieldt"  %></div>
 	        </div>
 
-	        <div class="field login-checkbox">
-	          <div><%= f.label "Are you a Mutawalli ?" %></div>
-	          <div><%= f.check_box :mutawalli, class: "fieldt"  %></div>
-	        </div>
-
+            <% if current_user.is_admin? %>
+		        <div class="field login-checkbox">
+		          <div><%= f.label "Are you a Mutawalli ?" %></div>
+		          <div><%= f.check_box :mutawalli, class: "fieldt"  %></div>
+		        </div>
+            <% end %>
+            
 		    <div class="field">
 		      <%= f.label :city %><br />
 		      <%= f.text_field :city, class: "fieldt"  %>
