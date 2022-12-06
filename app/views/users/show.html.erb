@@ -1,6 +1,9 @@
 <div class="users-show">
 	<div class="user-show">
 		<div><strong>Name: </strong><%= @user.name  %></div>
+		<% if @user.is_admin? %>
+		<div><strong>Title: </strong>Admin</div>
+		<% end %>
 		<div><strong>Phone no:</strong><%= @user.phone  %></div>
 	    <div><% if @user.imam.present? %>
 				<div><strong>Qualifications: </strong>kari</div>

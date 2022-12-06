@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_06_044607) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_052942) do
   create_table "masjids", force: :cascade do |t|
     t.string "name"
     t.string "city"
@@ -39,6 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_044607) do
     t.boolean "imam"
     t.string "status"
     t.boolean "is_admin", default: false
+    t.string "mutawalli"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
