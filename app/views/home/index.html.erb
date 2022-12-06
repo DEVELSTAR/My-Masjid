@@ -9,8 +9,10 @@
 		<% else %>
 		  <a href="<%= new_user_session_path %>" class="link" >Profile</a>
 		<% end %>
-		<% if user_signed_in? && current_user.is_admin? %>
-		   <a href="<%= new_masjid_path %>" class="link" >Add new Masjid</a>
+		<% if user_signed_in? %>
+			<% if current_user.sub_admin? || current_user.is_admin? %>
+			   <a href="<%= new_masjid_path %>" class="link" >Add new Masjid</a>
+			<% end %>
 		<% end %>
 		<a href="<%= empty_masjid_masjids_path %>" class="link" >Find a Masjid</a>
 		<a href="<%= job_imam_users_path %>" class="link" >Find an Imam</a>
