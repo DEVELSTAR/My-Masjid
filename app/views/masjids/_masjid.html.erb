@@ -2,5 +2,9 @@
   <div class="masjid">
     <div><%= link_to m.name.titleize, masjid_path(m), class: "name" %></div>
     <div class="gray">address: <%= m.village.humanize  %> <%= m.city  %></div>
+    <div><% if current_user.is_admin? %>
+           <%= link_to "Edit", edit_masjid_path(m) %>
+         <% end %>
+    </div>
   </div>
 <% end %>

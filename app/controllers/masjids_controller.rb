@@ -1,12 +1,12 @@
 class MasjidsController < ApplicationController
     before_action :authenticate_user!, only: [ :update_status, :new]
+    before_action :set_masjid, only: [:show, :update_status, :edit, :update]
 
 	def index
 		@masjids = Masjid.all
 	end
 
 	def show
-		@masjid = Masjid.find(params[:id])
 	end
 	
 	def empty_masjid
@@ -14,7 +14,6 @@ class MasjidsController < ApplicationController
     end
 
 	def update_status
-		@masjid = Masjid.find(params[:id])
 		if params[:status].present? && Masjid::STATUSES.include?(params[:status].to_sym)
 		  @masjid.update(status: params[:status])
 		  redirect_to @masjid
@@ -38,10 +37,22 @@ class MasjidsController < ApplicationController
 		end
 	end
 
+	def edit
+	end
+
+	def update
+	    @masjid.update(masjid_params)
+	    redirect_to @masjid
+	end
 
 	private
+
+	def set_masjid
+	    @masjid = Masjid.find(params[:id])
+	end
 
 	def masjid_params
         params.require(:masjid).permit(:name, :city, :village, :user_id, :imam, :mutawalli)
 	end
+
 end

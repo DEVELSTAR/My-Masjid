@@ -1,17 +1,18 @@
 <div class="masjids-show">
 	<div class="masjid-show">
 		<div class="name"><%= @masjid.name.titleize %></div>
-		<% if @masjid.status == "no_need" %>
-		<div><strong>Imam: </strong>Mohd Nawaj shareef</div>
-		<% end %>
-		<div><strong>Mutawalli: </strong>Ashiq Ahmad</div>
+		<div><strong>Imam: </strong><%= @masjid.imam.present? ? @masjid.imam : "unavalaible" %></div>
+		<div><strong>Mutawalli: </strong><%= @masjid.mutawalli.present? ? @masjid.mutawalli : "unavalaible" %></div>
 		<div><strong>Address: </strong><%= @masjid.village.humanize %> <%= @masjid.city %></div>
-		<div><% if @masjid.user == current_user %>
+		<div><% if current_user.is_admin? %>
 				<div>
 				  <strong>status:</strong>
 				  <% Masjid::STATUSES.each do |status| %>
 				    <%= link_to_unless @masjid.status.eql?(status.to_s), status, update_status_masjid_path(@masjid, status: status), data: {turbo_method: :put} %>
 				  <% end %>
+				</div>
+				<div>
+	              <%= link_to "Edit", edit_masjid_path(@masjid) %>
 				</div>
 			<% else %>
 			    <strong>Status: </strong><%= @masjid.status %>
