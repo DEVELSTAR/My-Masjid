@@ -52,7 +52,7 @@ class MasjidsController < ApplicationController
 	end
 
 	def masjid_params
-        params.require(:masjid).permit(:name, :city, :village, :user_id, :imam, :mutawalli)
+        params.require(:masjid).permit(:name, :city, :village, :user_id, :imam, :mutawalli, :sub_admin)
 	end
 
 end

@@ -5,6 +5,7 @@
 		<div><strong>Title: </strong>Admin</div>
 		<% end %>
 		<div><strong>Phone no:</strong><%= @user.phone  %></div>
+		<div><strong>Token: </strong><%= @user.sub_admin ? @user.sub_admin : "unavalaible" %></div>
 	    <div><% if @user.imam.present? %>
 				<div><strong>Qualifications: </strong>kari</div>
 				<div><strong>Experience: </strong>2 years</div>

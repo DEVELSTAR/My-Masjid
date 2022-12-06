@@ -4,4 +4,8 @@ class Masjid < ApplicationRecord
 
   validates :name, :city, :village,  presence: true
   belongs_to :user
+
+  def sub_admin?
+    sub_admin
+  end
 end
