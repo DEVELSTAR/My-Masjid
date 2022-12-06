@@ -6,4 +6,9 @@ class User < ApplicationRecord
 
   STATUSES = [:Working, :not_working]
   has_many :masjids, dependent: :destroy
+
+
+  def is_admin?
+    is_admin
+  end
 end
