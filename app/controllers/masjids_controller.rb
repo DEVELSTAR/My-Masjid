@@ -29,13 +29,19 @@ class MasjidsController < ApplicationController
 
 	def create
 		@masjid = Masjid.create(masjid_params)
-		redirect_to masjids_path
+		respond_to do |format|
+		    if @masjid.save
+		      format.html { redirect_to @masjid, notice: 'Masjid was successfully created.' }
+		    else
+		      format.html { render :new }
+		    end
+		end
 	end
 
 
 	private
 
 	def masjid_params
-        params.require(:masjid).permit(:name, :city, :village, :user_id)
+        params.require(:masjid).permit(:name, :city, :village, :user_id, :imam, :mutawalli)
 	end
 end

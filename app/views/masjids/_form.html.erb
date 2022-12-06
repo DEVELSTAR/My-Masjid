@@ -3,6 +3,8 @@
     <h3>Masjid Details</h3>
     <%= form_with model: @masjid do |f| %>
       <div><%= f.text_field :name, autofocus: true, placeholder: "Name of the Masjid...", class: "name" %></div>
+      <div><%= f.text_field :imam, placeholder: "Imam of the Masjid...", class: "name" %></div>
+      <div><%= f.text_field :mutawalli, placeholder: "Mutawalli of the Masjid...", class: "name" %></div>
       <div><%= f.text_field :city, placeholder: "Name of the city...", class: "name" %>
       <div><%= f.text_field :village, placeholder: "Name of the village...", class: "name" %>
       </div>
