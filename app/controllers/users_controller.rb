@@ -9,6 +9,15 @@ class UsersController < ApplicationController
     @showing_title = true
   end
   
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    current_user.update(user_params)
+    redirect_to current_user
+  end
+
   def all_imam
     @users = User.where(imam: "true")
   end
@@ -25,5 +34,12 @@ class UsersController < ApplicationController
     else
       redirect_to @user
     end
-  end    
+  end 
+
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :phone, :city, :village, :imam, :is_admin, :mutawalli)
+  end   
 end

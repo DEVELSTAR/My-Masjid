@@ -1,0 +1,45 @@
+<div class="login">
+    <div class="login-box">
+	    <h2>Edit <%= current_user.is_admin? ? "(Admin)" : "user" %></h2>
+	    <div class="login-fields">
+		  <%= form_with model: current_user, local: true do |f| %>
+		    <div class="field">
+		      <%= f.label :name %><br />
+		      <%= f.text_field :name, autofocus: true, class: "fieldt" , class: "fieldt"  %>
+		    </div>
+
+		    <div class="field">
+		      <%= f.label :phone %><br />
+		      <%= f.text_field :phone, class: "fieldt"  %>
+		    </div>
+
+	        <div class="field login-checkbox">
+	          <div><%= f.label "Are you an Imam ?" %></div>
+	          <div><%= f.check_box :imam, class: "fieldt"  %></div>
+	        </div>
+
+	        <div class="field login-checkbox">
+	          <div><%= f.label "Are you a Mutawalli ?" %></div>
+	          <div><%= f.check_box :mutawalli, class: "fieldt"  %></div>
+	        </div>
+
+		    <div class="field">
+		      <%= f.label :city %><br />
+		      <%= f.text_field :city, class: "fieldt"  %>
+		    </div>
+
+		    <div class="field">
+		      <%= f.label :village %><br />
+		      <%= f.text_field :village, class: "fieldt"  %>
+		    </div>
+		    <div class="field">
+		      <%= f.label :email %><br />
+		      <%= f.text_field :email, autocomplete: "email", class: "fieldt"  %>
+		    </div>
+		    <div class="actions">
+		    	<%= f.submit "Submit", class: "login-btn" %>
+		    </div>
+		  <% end %>
+	    </div>
+	</div>
+</div>
