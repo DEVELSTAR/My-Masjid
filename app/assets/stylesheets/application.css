@@ -38,3 +38,14 @@ a{
 .gray{
     color: gray;
 }
+.bg-red{
+    background-color: red;
+}
+.bg-blue{
+    background-color: blue;
+}
+.edit-btn{
+    padding: 0 1rem;
+    color: white;
+    font-size: 1rem;
+}
