@@ -4,13 +4,17 @@
 		<% if @user.is_admin? %>
 		  <div><strong>Title: </strong>Admin</div>
 		<% else %>
-		  <div><strong>Token: </strong><%= @user.sub_admin ? @user.sub_admin : "unavalaible" %></div>
+		  <div><strong>Token: </strong><%= @user.sub_admin.present? ? @user.sub_admin : "unavalaible" %></div>
 		<% end %>
-		<div><strong>Phone no:</strong><%= @user.phone  %></div>
 	    <div><% if @user.imam.present? %>
-				<div><strong>Qualifications: </strong>kari</div>
-				<div><strong>Experience: </strong>2 years</div>
-				<div><strong>Address: </strong><%= @user.village.humanize  %> <%= @user.city  %></div>
+				<div>
+					<strong>Qualifications: </strong>
+					<%= @user.qualifications ? @user.qualifications : "unavalaible" %>
+				</div>
+				<div>
+					<strong>Experience: </strong>
+					<%= @user.experience.present? ? @user.experience : "unavalaible" %>
+				</div>
 				<div>
 					<% if @user == current_user %>			  
 					  <strong>Status:</strong>
@@ -19,9 +23,15 @@
 					  <% end %>
 					<% end %>
 				</div>
-			<% else %>
-				<div><strong>Address: </strong><%= @user.village.humanize  %> <%= @user.city  %></div>
 		    <% end %>
+		<div>
+			<strong>Phone no:</strong>
+			<%= @user.phone  %>
+		</div>
+		<div>
+			<strong>Address: </strong>
+			<%= @user.village.humanize  %> <%= @user.city  %>
+		</div>  
 		</div>
 		<div>
         <% if user_signed_in? %>
