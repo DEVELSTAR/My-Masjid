@@ -2,7 +2,7 @@
     <div class="login-box">
 	    <h2>Edit <%= @user.is_admin? ? "(Admin)" : "user" %></h2>
 	    <div class="login-fields">
-		  <%= form_with model: current_user, local: true do |f| %>
+		  <%= form_with model: @user, local: true do |f| %>
 		    <div class="field">
 		      <%= f.label :name %><br />
 		      <%= f.text_field :name, autofocus: true, class: "fieldt" , class: "fieldt"  %>
@@ -12,24 +12,36 @@
 		      <%= f.label :phone %><br />
 		      <%= f.text_field :phone, class: "fieldt"  %>
 		    </div>
+            <% unless @user.is_admin? %>
+		        <div class="field">
+		          <div><%= f.label "Token" %></div>
+		          <div><%= f.text_field :sub_admin, class: "fieldt"  %></div>
+		        </div>
+		        
+		        <div class="field login-checkbox">
+		          <div><%= f.label "Are you an Imam ?" %></div>
+		          <div><%= f.check_box :imam, class: "fieldt"  %></div>
+		        </div>
 
-	        <div class="field">
-	          <div><%= f.label "Token" %></div>
-	          <div><%= f.text_field :sub_admin, class: "fieldt"  %></div>
-	        </div>
-	        
-	        <div class="field login-checkbox">
-	          <div><%= f.label "Are you an Imam ?" %></div>
-	          <div><%= f.check_box :imam, class: "fieldt"  %></div>
-	        </div>
+                <%= f.label :age_child, "Hafiz" %>
+                <%= f.radio_button :qualifications, "Hafiz" %>
 
-            <% if current_user.is_admin? %>
+                <%= f.label :age_child, "Kari" %>
+                <%= f.radio_button :qualifications, "Kari" %>
+
+                <%= f.label :age_child, "Maulana" %>
+		        <%= f.radio_button :qualifications, "Maulana" %>
+
+                <div class="field">
+		          <div><%= f.label "Experience" %></div>
+		          <div><%= f.text_field :experience, class: "fieldt"  %></div>
+		        </div>
+
 		        <div class="field login-checkbox">
 		          <div><%= f.label "Are you a Mutawalli ?" %></div>
 		          <div><%= f.check_box :mutawalli, class: "fieldt"  %></div>
 		        </div>
             <% end %>
-            
 		    <div class="field">
 		      <%= f.label :city %><br />
 		      <%= f.text_field :city, class: "fieldt"  %>

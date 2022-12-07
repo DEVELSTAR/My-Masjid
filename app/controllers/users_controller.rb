@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: [:show, :update_status, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :update_status, :edit, :update, :destroy]
 
   def show
   end
@@ -13,8 +13,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user.update(user_params)
-    redirect_to current_user
+    @user.update(user_params)
+    redirect_to @user
   end
 
   def all_imam
@@ -47,6 +47,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :phone, :city, :village, :imam, :is_admin, :mutawalli, :sub_admin)
+    params.require(:user).permit(:name, :email, :phone, :city, :village, :imam, :is_admin, :mutawalli, :sub_admin, :qualifications, :experience)
   end   
 end

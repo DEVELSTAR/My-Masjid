@@ -1,11 +1,11 @@
 <% @users.each do |u|  %>
   <div class="imam">
-    <div class="name"><%= link_to u.name, user_path(u), class: "black" %></div>
+    <div class="name"><strong>Name: </strong><%= link_to u.name, user_path(u), class: "black" %></div>
     <% if @showing_title && u.imam %>
-      <div>Title: imam</div>  
+      <div><strong>Title: </strong>imam</div>  
     <% end %>
-    <div>Phone no: <%= u.phone %></div>
-    <div>Address: <%= u.village.humanize  %> <%= u.city  %></div>
+    <div><strong>Phone no: </strong><%= u.phone %></div>
+    <div><strong>Address: </strong><%= u.village.humanize  %> <%= u.city  %></div>
       <% if user_signed_in? %>
       <div><% if current_user.is_admin?  || current_user == u  %>
          <%= link_to "Edit", edit_user_path(u), class: "edit-btn bg-blue" %>
