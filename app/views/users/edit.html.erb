@@ -1,5 +1,5 @@
 <div class="login">
-    <div class="login-box">
+    <div class="login-box mt1 mb2">
 	    <h2>Edit <%= @user.is_admin? ? "(Admin)" : "user" %></h2>
 	    <div class="login-fields">
 		  <%= form_with model: @user, local: true do |f| %>
