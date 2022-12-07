@@ -1,6 +1,4 @@
 .imams{
-/*    background-color: #4cb050;*/
-/*	height: 100vh;*/
 	padding: 2rem;
 }
 .imams-btns{
@@ -10,4 +8,17 @@
 .imams h3{
 	font-size: 2rem;
 	margin-top: 3rem;
+}
+@media only screen and (min-width: 425px){
+	.imams{
+		
+	}
+	.imams h3{
+		text-align: center;
+		font-size: 4rem !important;
+	}
+	.imams-btns{
+		font-size: 2rem;
+		justify-content: space-around;
+	}
 }

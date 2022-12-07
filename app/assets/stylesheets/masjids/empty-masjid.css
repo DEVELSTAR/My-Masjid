@@ -1,9 +1,25 @@
 .empty-masjid{
-/*    background-color: #4cb050;
-	height: 100vh;*/
 	padding: 2rem;
 }
 .empty-masjid h3{
 	font-size: 2rem;
 	margin-top: 3rem;
+}
+@media only screen and (min-width: 425px){
+	.empty-masjid{
+		font-size: 3rem;
+	}
+	.empty-masjid .link{
+		font-size: 2rem;
+	}
+	.empty-masjid h3{
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	.empty-masjid .links{
+		text-align: center;
+	}
+	.edit-btn{
+		font-size: 1.5rem !important;
+	}
 }

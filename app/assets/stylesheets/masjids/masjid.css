@@ -9,3 +9,15 @@
 .masjid .name{
 	font-size: 1.5rem;
 }
+
+@media only screen and (min-width: 425px){
+	.masjid{
+		margin: auto;
+		margin-bottom: 2rem;
+		width: 40%;
+		font-size: 1.5rem;
+	}
+	.masjid .name{
+		font-size: 2.5rem;
+	}
+}

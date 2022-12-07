@@ -18,3 +18,17 @@
 	font-size: 2rem;
 	margin-bottom: 1rem;
 }
+@media only screen and (min-width: 425px){
+	.masjids-show{
+	}
+	.masjid-show{
+		font-size: 2rem;
+		line-height: 3rem;
+		width: 40%;
+		margin: auto;
+		margin-top: 4rem;
+	}
+	.masjid-show strong{
+		font-size: 1.5rem;
+	}
+}

@@ -58,29 +58,19 @@
 		height: 90%;
 		width: 30%;
 	}
-	.home-index .logo div{
-		font-size: 2rem;
-		margin-top: -2.5rem;
-		color: #ededdf;
-		font-weight: bolder;
-	}
 	.home-index .links{
 		height: 55%;
 		width: 50%;
 		margin: auto;
 		border-radius: 0;
 		background: none;
-/*		box-shadow: none;*/
 	}
 	.home-index .links a{
-		color: black;
 		font-size: 2rem;
 	}
 
 	.home-index .links .link{
 		width: 80%;
-		box-shadow: 10px 10px 9px -6px rgba(0,0,0,0.75);
-		border-radius: 15px;
 	}
 
 

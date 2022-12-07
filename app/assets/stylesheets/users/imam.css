@@ -12,3 +12,17 @@
 .imam .name{
 	font-size: 1.5rem;
 }
+@media only screen and (min-width: 425px){
+	.imam{
+		width: 40%;
+		font-size: 2rem;
+		margin: auto;
+		margin-bottom: 2rem;
+	}
+	.imam .name{
+		font-size: 2rem;
+	}
+	.imam strong{
+		font-size: 1.5rem;
+	}
+}

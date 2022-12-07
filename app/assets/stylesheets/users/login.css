@@ -108,3 +108,12 @@
 		display: none;
 	}
 }
+
+@media only screen and (min-width: 425px){
+	.login{
+		width: 30%;
+		margin: auto;
+		margin-top: 2rem;
+		font-size: 1.5rem;
+	}
+}

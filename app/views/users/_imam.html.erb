@@ -1,18 +1,18 @@
 <% @users.each do |u|  %>
   <div class="imam">
     <div class="name"><strong>Name: </strong><%= link_to u.name, user_path(u), class: "black" %></div>
-    <% if @showing_title && u.imam %>
-      <div><strong>Title: </strong>imam</div>  
-    <% end %>
     <% if u.qualifications.present? %>
-    <div><strong>Title: </strong><%= u.qualifications %></div>
+      <div><strong>Title: </strong><%= u.qualifications %></div>
+    <% elsif @showing_title && u.imam %>
+      <div><strong>Title: </strong>imam</div>  
     <% end %> 
     <div><strong>Address: </strong><%= u.village.humanize  %> <%= u.city  %></div>
       <% if user_signed_in? %>
-      <div><% if current_user.is_admin?  || current_user == u  %>
-         <%= link_to "Edit", edit_user_path(u), class: "edit-btn bg-blue" %>
-         <%= link_to "Delete", u , data: {turbo_method: :delete, turbo_confirm: "Are you sure!"}, class: "edit-btn bg-red" %>
-       <% end %>
+      <div>
+        <% if current_user.is_admin?  || current_user == u  %>
+          <%= link_to "Edit", edit_user_path(u), class: "edit-btn bg-blue" %>
+          <%= link_to "Delete", u , data: {turbo_method: :delete, turbo_confirm: "Are you sure!"}, class: "edit-btn bg-red" %>
+        <% end %>
       </div>
       <% end %>
   </div>

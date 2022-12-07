@@ -1,21 +1,16 @@
 .masjids-form{
-/*	height: 100vh;*/
 	padding: 2rem;
-/*	background-color: #4cb050;*/
 	font-weight: bolder;
 }
 .masjid-form{
 	background-color: white;
 	font-size: 2rem;
 	box-shadow: 10px 10px 9px -6px rgba(0,0,0,0.75);
-/*	border: 2px solid red;*/
 }
 .masjid-form h3{
 	text-align: center;
-/*	margin-top: 2rem;*/
 	padding-top: 2rem;
 	margin-bottom: 1rem;
-/*	border: 2px solid red;*/
 }
 .masjid-form input{
 	font-size: 1.3rem;
@@ -32,9 +27,24 @@
 .masjid-form input[type=submit]{
 	border: none;
 	padding: .5rem 2rem;
-	background-color: #4cb050;
+	background-color: blue;
 	font-weight: bolder;
 	margin-left: .7rem;
 	cursor: pointer;
 	color: white;
+}
+
+@media only screen and (min-width: 425px){
+	.masjids-form{
+		width: 30%;
+		margin: auto;
+		margin-top: 2rem;
+	}
+	.masjid-form input{
+		margin-left: 1.5rem;
+
+	}
+	.masjid-form input[type=submit]{
+		margin-left: 1.5rem;
+	}
 }
