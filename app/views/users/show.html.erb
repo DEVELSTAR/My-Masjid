@@ -1,10 +1,17 @@
 <div class="users-show">
 	<div class="user-show">
-		<div><strong>Name: </strong><%= @user.name  %></div>
+		<div>
+			<strong>Name: </strong><%= @user.name  %>
+		</div>
 		<% if @user.is_admin? %>
-		  <div><strong>Title: </strong>Admin</div>
+		  <div>
+		  	<strong>Title: </strong>Admin
+		  </div>
 		<% else %>
-		  <div><strong>Token: </strong><%= @user.sub_admin.present? ? @user.sub_admin : "unavalaible" %></div>
+		  <div>
+		  	<strong>Token: </strong>
+		  	<%= @user.sub_admin.present? ? @user.sub_admin : "unavalaible" %>
+		  </div>
 		<% end %>
 	    <div><% if @user.imam.present? %>
 				<div>
@@ -16,7 +23,7 @@
 					<%= @user.experience.present? ? @user.experience : "unavalaible" %>
 				</div>
 				<div>
-					<% if @user == current_user %>			  
+					<% if @user == current_user || current_user.is_admin? %>			  
 					  <strong>Status:</strong>
 					  <% User::STATUSES.each do |status| %>
 					    <%= link_to_unless @user.status.eql?(status.to_s), status, update_status_user_path(@user, status: status), data: {turbo_method: :put} %>
@@ -24,14 +31,14 @@
 					<% end %>
 				</div>
 		    <% end %>
-		<div>
-			<strong>Phone no:</strong>
-			<%= @user.phone  %>
-		</div>
-		<div>
-			<strong>Address: </strong>
-			<%= @user.village.humanize  %> <%= @user.city  %>
-		</div>  
+			<div>
+				<strong>Phone no:</strong>
+				<%= @user.phone  %>
+			</div>
+			<div>
+				<strong>Address: </strong>
+				<%= @user.village.humanize  %> <%= @user.city  %>
+			</div>  
 		</div>
 		<div>
         <% if user_signed_in? %>
@@ -42,3 +49,19 @@
 		<% end %>
 	    </div>
 </div>
+<% @masjids.each do |m| %>
+	<% if @user.sub_admin? == m.sub_admin? %>
+     <div class="masjid">
+	    <div><%= link_to m.name.titleize, masjid_path(m), class: "name black" %></div>
+	    <div class="gray">address: <%= m.village.humanize  %> <%= m.city  %></div>
+	    <div>
+	        <% if user_signed_in? %>
+	            <% if current_user.is_admin?  || m.sub_admin == current_user.sub_admin && current_user.sub_admin.present? %>
+	             <%= link_to "Edit", edit_masjid_path(m), class: "edit-btn bg-blue" %>
+	             <%= link_to "Delete", m , data: {turbo_method: :delete, turbo_confirm: "Are you sure!"}, class: "edit-btn bg-red" %>
+	            <% end %>
+	        <% end %>
+	    </div>
+	  </div>
+	<% end%>
+<% end %>

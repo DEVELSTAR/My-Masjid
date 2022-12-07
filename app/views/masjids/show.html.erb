@@ -1,7 +1,12 @@
 <div class="masjids-show">
 	<div class="masjid-show">
 		<div><strong>Name: </strong><%= @masjid.name.titleize %></div>
-		<div><strong>Imam: </strong><%= @masjid.imam.present? ? @masjid.imam : "unavalaible" %></div>
+		<% if @masjid.status == "no_need" %>
+		  <div>
+		  	<strong>Imam: </strong>
+		  	<%= @masjid.imam.present? ? @masjid.imam : "unavalaible" %>
+		  </div>
+		<% end %>
 		<div><strong>Mutawalli: </strong><%= @masjid.mutawalli.present? ? @masjid.mutawalli : "unavalaible" %></div>
 		<div><strong>Address: </strong><%= @masjid.village.humanize %> <%= @masjid.city %></div>
 		<div>

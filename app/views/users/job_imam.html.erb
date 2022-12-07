@@ -1,6 +1,8 @@
 <div class="imams">
-	<a href="<%= all_imam_users_path %>" class="link black" >All Imam</a>
-	<%= link_to "All users", users_path, class: "black" %>
+	<div class="imams-btns">
+		<div><a href="<%= all_imam_users_path %>" class="link black" >All Imam</a></div>
+		<div><%= link_to "All users", users_path, class: "black" %></div>
+    </div>
 	<h3>Imams need a Job. </h3>
 	<%= render 'imam' %>
 </div>

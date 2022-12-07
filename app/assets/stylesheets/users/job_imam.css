@@ -3,6 +3,10 @@
 	height: 100vh;
 	padding: 2rem;
 }
+.imams-btns{
+	display: flex;
+	justify-content: space-between;
+}
 .imams h3{
 	font-size: 2rem;
 	margin-top: 3rem;

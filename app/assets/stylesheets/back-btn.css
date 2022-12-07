@@ -1,0 +1,8 @@
+.back-btns{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 2rem;
+}
+.back-btns a{
+	color: black;
+}

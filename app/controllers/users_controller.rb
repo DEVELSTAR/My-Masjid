@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update_status, :edit, :update, :destroy]
 
   def show
+    @masjids = Masjid.all
   end
 
   def index
