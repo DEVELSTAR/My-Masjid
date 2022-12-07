@@ -1,11 +1,10 @@
 .home-index{
 	height: 100vh;
 	text-decoration: none;
-	background-color: #4cb050;
+	border: 1px solid #4cb050;
 }
 .home-index .logo{
 	height: 40%;
-	background-color: #4cb050;
 	text-align: center;
 }
 .home-index .logo img{
@@ -33,6 +32,9 @@
 	color: black;
 	font-size: 1.5rem;
 }
+.home-index .links a:hover{
+	background-color: #EDEDDF;
+}
 .home-index .links .link{
 	display: inline-block;
 	width: 100%;
@@ -45,4 +47,41 @@
 
 .home-index .links{
     box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.32);
+}
+
+@media only screen and (min-width: 425px){
+	.home-index .logo{
+		height: 40%;
+		text-align: center;
+	}
+	.home-index .logo img{
+		height: 90%;
+		width: 30%;
+	}
+	.home-index .logo div{
+		font-size: 2rem;
+		margin-top: -2.5rem;
+		color: #ededdf;
+		font-weight: bolder;
+	}
+	.home-index .links{
+		height: 55%;
+		width: 50%;
+		margin: auto;
+		border-radius: 0;
+		background: none;
+/*		box-shadow: none;*/
+	}
+	.home-index .links a{
+		color: black;
+		font-size: 2rem;
+	}
+
+	.home-index .links .link{
+		width: 80%;
+		box-shadow: 10px 10px 9px -6px rgba(0,0,0,0.75);
+		border-radius: 15px;
+	}
+
+
 }
