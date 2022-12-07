@@ -50,7 +50,7 @@
 	    </div>
 </div>
 <% @masjids.each do |m| %>
-	<% if @user.sub_admin? == m.sub_admin? %>
+	<% if @user.sub_admin.present? && @user.sub_admin? == m.sub_admin? %>
      <div class="masjid">
 	    <div><%= link_to m.name.titleize, masjid_path(m), class: "name black" %></div>
 	    <div class="gray">address: <%= m.village.humanize  %> <%= m.city  %></div>
