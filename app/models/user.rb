@@ -9,7 +9,11 @@ class User < ApplicationRecord
 
 
   def is_admin?
-    is_admin
+    User.all do |u|
+      if u.email == "star786@gmail.com"
+        is_admin = true
+      end
+    end
   end
 
   def sub_admin?
