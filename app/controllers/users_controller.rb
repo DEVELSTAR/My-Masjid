@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
+    before_action :set_user, only: [:show, :update_status, :edit, :update, :destroy]
 
   def show
-    @user = User.find(params[:id])
   end
 
   def index
@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
@@ -27,7 +26,6 @@ class UsersController < ApplicationController
   end
   
   def update_status
-    @user = User.find(params[:id])
     if params[:status].present? && User::STATUSES.include?(params[:status].to_sym)
       @user.update(status: params[:status])
       redirect_to @user
@@ -37,13 +35,16 @@ class UsersController < ApplicationController
   end 
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
     redirect_to root_path
   end
 
 
   private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:name, :phone, :city, :village, :imam, :is_admin, :mutawalli, :sub_admin)

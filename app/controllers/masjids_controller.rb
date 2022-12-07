@@ -1,6 +1,6 @@
 class MasjidsController < ApplicationController
     before_action :authenticate_user!, only: [ :update_status, :new]
-    before_action :set_masjid, only: [:show, :update_status, :edit, :update]
+    before_action :set_masjid, only: [:show, :update_status, :edit, :update, :destroy]
 
 	def index
 		@masjids = Masjid.all
@@ -43,6 +43,11 @@ class MasjidsController < ApplicationController
 	def update
 	    @masjid.update(masjid_params)
 	    redirect_to @masjid
+	end
+
+	def destroy
+	    @masjid.destroy
+	    redirect_to root_path
 	end
 
 	private

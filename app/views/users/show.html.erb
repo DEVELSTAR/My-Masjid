@@ -26,7 +26,7 @@
         <% if user_signed_in? %>
 			<% if current_user.is_admin?  || current_user == @user   %>
 			   <%= link_to "Edit", edit_user_path(@user), class: "edit-btn bg-blue" %>
-               <%= link_to "Delete", @user , data: {turbo_method: :delete, turbo_confirm: "are you sure!"}, class: "edit-btn bg-red" %>
+               <%= link_to "Delete", @user , data: {turbo_method: :delete, turbo_confirm: "Are you sure!"}, class: "edit-btn bg-red" %>
 			 <% end %>
 		<% end %>
 	    </div>

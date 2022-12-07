@@ -1,13 +1,14 @@
 .masjids-show{
 	background-color: #4cb050;
-	height: 100vh;
+/*	height: 100vh;*/
 	padding: 2rem 1rem;
 	line-height: 2rem;
+	font-size: 2rem;
 }
 .masjid-show{
     background-color: white;
     padding: 1rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
 	box-shadow: 10px 10px 9px -6px rgba(0,0,0,0.75);
 }
 .masjid-show strong{

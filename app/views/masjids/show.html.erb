@@ -1,6 +1,6 @@
 <div class="masjids-show">
 	<div class="masjid-show">
-		<div class="name"><%= @masjid.name.titleize %></div>
+		<div><strong>Name: </strong><%= @masjid.name.titleize %></div>
 		<div><strong>Imam: </strong><%= @masjid.imam.present? ? @masjid.imam : "unavalaible" %></div>
 		<div><strong>Mutawalli: </strong><%= @masjid.mutawalli.present? ? @masjid.mutawalli : "unavalaible" %></div>
 		<div><strong>Address: </strong><%= @masjid.village.humanize %> <%= @masjid.city %></div>
@@ -17,7 +17,8 @@
 				  <% end %>
 				</div>
 				<div>
-	              <%= link_to "Edit", edit_masjid_path(@masjid) %>
+	              <%= link_to "Edit", edit_masjid_path(@masjid), class: "edit-btn bg-blue" %>
+	              <%= link_to "Delete", @masjid , data: {turbo_method: :delete, turbo_confirm: "Are you sure!"}, class: "edit-btn bg-red" %>
 				</div>
 			<% else %>
 			    <strong>Status: </strong><%= @masjid.status %>
