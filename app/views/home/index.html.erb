@@ -17,9 +17,9 @@
 		<a href="<%= empty_masjid_masjids_path %>" class="link" >Find a Masjid</a>
 		<a href="<%= job_imam_users_path %>" class="link" >Find an Imam</a>
 		<% if user_signed_in? %>
-		  <%= link_to "logout", destroy_user_session_path, data: {turbo_method: :delete} %>
+		  <%= link_to "log out", destroy_user_session_path, data: {turbo_method: :delete} %>
 		<% else %>
-		  <%= link_to "login", new_user_session_path %>
+		  <%= link_to "log in", new_user_session_path %>
 		<% end %>
 	</div>
 </div>

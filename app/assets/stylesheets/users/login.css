@@ -1,7 +1,7 @@
 .login{
-	height: 100vh;
-	border: 1px solid white;
-	background-color: #4cb050;
+/*	height: 100vh;*/
+/*	border: 1px solid white;*/
+/*	background-color: #4cb050;*/
 }
 .login-logo{
 	font-weight: bolder;
@@ -88,7 +88,7 @@
 }
 @media only screen and (max-height: 800px) {
 	.login .login-box{
-		margin-top: 5rem;
+/*		margin-top: 5rem;*/
 	}
 	.login .login-box .login-btn{
 		margin-top: 1rem;
@@ -97,7 +97,7 @@
 }
 @media only screen and (max-height: 700px) {
 	.login .login-box{
-		margin-top: 3rem;
+/*		margin-top: 3rem;*/
 	}
 	.login .login-box .login-btn{
 		margin-top: 1rem;

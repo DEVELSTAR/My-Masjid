@@ -19,7 +19,8 @@
     box-sizing: border-box;
 }
 body{
-    font-family: arial;
+    font-family: 'Teko', sans-serif;
+    background-color: #4cb050;
 }
 a{
     text-decoration: none;
