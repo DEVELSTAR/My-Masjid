@@ -6,19 +6,27 @@
 	    <th>Phone</th>
 	    <th>Munji</th>
 	    <th>Gehun</th>
+	    <th>Fill Now</th>
 	  </tr>
 	</thead>
 	<tbody>
 	    <% @masjids_member.each do |m| %>
-
 		  <tr>
 		    <td><%= m.name %></td>
 		    <td><%= m.father_name %></td>
 		    <td>9012626767</td>
-		    <% m.bethhs.each do |b| %>
-			    <td><%= b.munji %></td>
-			    <td><%= b.gehun %></td>
-		    <% end %>
+	    	<% m.bethhs.each do |b| %>
+		     <td><%= b.munji ? b.munji : "no" %></td>
+		     <td><%= b.gehun ? b.gehun : "no" %></td>
+	        <% end %>
+	        <td>
+		        <%= form_with model: @bethh do |f| %>
+	              <%= f.text_field :munji, placeholder: "Munji" %>
+	              <%= f.text_field :munji, placeholder: "Gehun" %>
+                  <%#= f.hidden_field :masjids_member_id, value: m.id %>
+	              <%= f.submit 'Create', class: "Masjid-btn" %>
+	            <% end %>
+            </td>
 		  </tr>
 	    <% end %>
 	</tbody>
