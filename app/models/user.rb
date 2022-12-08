@@ -7,12 +7,19 @@ class User < ApplicationRecord
   STATUSES = [:Working, :not_working]
   has_many :masjids, dependent: :destroy
 
+  validates :name, :city, :village,  presence: true
+
+  # def is_admin?
+  #   User.all do |u|
+  #     if u.email == "star786@gmail.com"
+  #       is_admin = true
+  #     end
+  #   end
+  # end
 
   def is_admin?
-    User.all do |u|
-      if u.email == "star786@gmail.com"
-        is_admin = true
-      end
+    if Current.user.email === "star786@gmail.com"
+      is_admin = true
     end
   end
 

@@ -10,7 +10,7 @@
 		  <a href="<%= new_user_session_path %>" class="link" >Profile</a>
 		<% end %>
 		<% if user_signed_in? %>
-			<% if current_user.sub_admin? || current_user.is_admin? %>
+			<% if current_user.sub_admin?.present? || current_user.is_admin? %>
 			   <a href="<%= new_masjid_path %>" class="link" >Add new Masjid</a>
 			<% end %>
 		<% end %>
