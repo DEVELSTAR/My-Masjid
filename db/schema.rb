@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_07_055120) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_08_073211) do
+  create_table "bethhs", force: :cascade do |t|
+    t.string "munji"
+    t.string "gehun"
+    t.date "filling_date"
+    t.string "comments"
+    t.integer "masjids_member_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["masjids_member_id"], name: "index_bethhs_on_masjids_member_id"
+  end
+
   create_table "masjids", force: :cascade do |t|
     t.string "name"
     t.string "city"
@@ -23,6 +34,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_055120) do
     t.string "imam"
     t.string "sub_admin"
     t.index ["user_id"], name: "index_masjids_on_user_id"
+  end
+
+  create_table "masjids_members", force: :cascade do |t|
+    t.string "name"
+    t.string "father_name"
+    t.integer "masjid_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["masjid_id"], name: "index_masjids_members_on_masjid_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,5 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_055120) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bethhs", "masjids_members"
   add_foreign_key "masjids", "users"
+  add_foreign_key "masjids_members", "masjids"
 end

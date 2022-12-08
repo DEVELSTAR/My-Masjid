@@ -4,6 +4,7 @@ class Masjid < ApplicationRecord
 
   validates :name, :city, :village,  presence: true
   belongs_to :user
+  has_many :bethhs, dependent: :destroy
 
   def sub_admin?
     sub_admin
