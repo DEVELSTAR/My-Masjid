@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.all.reverse
     @showing_title = true
   end
   
@@ -19,11 +19,11 @@ class UsersController < ApplicationController
   end
 
   def all_imam
-    @users = User.where(imam: "true")
+    @users = User.where(imam: "true").reverse
   end
 
   def job_imam
-    @users = User.where(status: "not_working")
+    @users = User.where(status: "not_working").reverse
   end
   
   def update_status

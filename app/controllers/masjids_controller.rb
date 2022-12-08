@@ -3,14 +3,14 @@ class MasjidsController < ApplicationController
     before_action :set_masjid, only: [:show, :update_status, :edit, :update, :destroy]
 
 	def index
-		@masjids = Masjid.all
+		@masjids = Masjid.all.reverse
 	end
 
 	def show
 	end
 	
 	def empty_masjid
-		@masjids = Masjid.where(status: "Need_a_imam")
+		@masjids = Masjid.where(status: "Need_a_imam").reverse
     end
 
 	def update_status
