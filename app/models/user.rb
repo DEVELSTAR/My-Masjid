@@ -9,16 +9,8 @@ class User < ApplicationRecord
 
   validates :name, :city, :village,  presence: true
 
-  # def is_admin?
-  #   User.all do |u|
-  #     if u.email == "star786@gmail.com"
-  #       is_admin = true
-  #     end
-  #   end
-  # end
-
   def is_admin?
-    if Current.user.email === "star786@gmail.com"
+    if self.email === "star786@gmail.com"
       is_admin = true
     end
   end
