@@ -59,10 +59,11 @@
 	            <% if current_user.is_admin?  || m.sub_admin == current_user.sub_admin && current_user.sub_admin.present? %>
 	             <%= link_to "Edit", edit_masjid_path(m), class: "edit-btn bg-blue" %>
 	             <%= link_to "Delete", m , data: {turbo_method: :delete, turbo_confirm: "Are you sure!"}, class: "edit-btn bg-red" %>
+                 <hr>
+                 <div><%= link_to "see all bethhs", masjid_masjids_members_path(m) %></div>
 	            <% end %>
 	        <% end %>
 	    </div>
 	  </div>
 	<% end%>
 <% end %>
-<%= link_to "see all bethhs", bethhs_index_path %>

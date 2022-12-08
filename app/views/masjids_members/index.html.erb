@@ -10,6 +10,7 @@
 	</thead>
 	<tbody>
 	    <% @masjids_member.each do |m| %>
+
 		  <tr>
 		    <td><%= m.name %></td>
 		    <td><%= m.father_name %></td>
@@ -22,4 +23,4 @@
 	    <% end %>
 	</tbody>
 </table>
-<%= "add members", new_masjids_member_path %>
+<%= link_to "add members", new_masjid_masjids_member_path %>

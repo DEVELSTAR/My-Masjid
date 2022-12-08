@@ -1,0 +1,14 @@
+<div class="masjids-form">
+  <div class="masjid-form">
+    <h3>Member Details</h3>
+    <%= form_with(model: [@masjid, @masjids_member], local: true) do |f| %>
+      <div>
+        <%= f.text_field :name, autofocus: true, placeholder: "Name of the Member...", class: "name" %>
+      </div>
+      <div>
+        <%= f.text_field :father_name, placeholder: "Father name of the Member...", class: "name" %>  
+      </div>
+      <%= f.submit 'Create', class: "Masjid-btn" %>
+    <% end %>
+  </div>
+</div>

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     collection do 
       get :empty_masjid
     end
+    resources :masjids_members
   end
 
-  get 'bethhs/index'
 end
