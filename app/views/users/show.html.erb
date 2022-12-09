@@ -7,10 +7,10 @@
 		  <div>
 		  	<strong>Title: </strong>Admin
 		  </div>
-		<% else %>
+		<% elsif @user == current_user || @user.is_admin? %>
 		  <div>
 		  	<strong>Token: </strong>
-		  	<%= @user.sub_admin.present? ? @user.sub_admin : "unavalaible" %>
+		  	<%= @user.sub_admin? ? @user.sub_admin? : "unavalaible" %>
 		  </div>
 		<% end %>
 	    <div><% if @user.imam.present? %>
@@ -23,11 +23,13 @@
 					<%= @user.experience.present? ? @user.experience : "unavalaible" %>
 				</div>
 				<div>
-					<% if @user == current_user || current_user.is_admin? %>			  
-					  <strong>Status:</strong>
-					  <% User::STATUSES.each do |status| %>
-					    <%= link_to_unless @user.status.eql?(status.to_s), status, update_status_user_path(@user, status: status), data: {turbo_method: :put} %>
-					  <% end %>
+					<% if user_signed_in? %>
+						<% if @user == current_user || current_user.is_admin? %>			  
+						  <strong>Status:</strong>
+						  <% User::STATUSES.each do |status| %>
+						    <%= link_to_unless @user.status.eql?(status.to_s), status, update_status_user_path(@user, status: status), data: {turbo_method: :put} %>
+						  <% end %>
+						<% end %>
 					<% end %>
 				</div>
 		    <% end %>
