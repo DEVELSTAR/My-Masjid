@@ -1,7 +1,7 @@
 .home-index{
 	height: 100vh;
 	text-decoration: none;
-	border: 1px solid #4cb050;
+/*	border: .1px solid #4cb050;*/
 }
 .home-index .logo{
 	height: 40%;
