@@ -6,7 +6,7 @@
     <% elsif @showing_title && u.imam %>
       <div><strong>Title: </strong>imam</div>  
     <% end %> 
-    <div><strong>Address: </strong><%= u.village.humanize  %> <%= u.city  %></div>
+    <div class="gray"><strong>Address: </strong><%= u.village.humanize  %> <%= u.city  %></div>
       <% if user_signed_in? %>
       <div>
         <% if current_user.is_admin?  || current_user == u  %>
