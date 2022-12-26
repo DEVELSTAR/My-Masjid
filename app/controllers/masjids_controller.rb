@@ -10,7 +10,7 @@ class MasjidsController < ApplicationController
 	end
 	
 	def empty_masjid
-		@masjids = Masjid.where(status: "Need_a_imam").reverse
+		@masjids = Masjid.where(status: "Need_an_imam").reverse
     end
 
 	def update_status

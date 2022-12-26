@@ -1,6 +1,6 @@
 class Masjid < ApplicationRecord
 
-  STATUSES = [:Need_a_imam, :no_need]
+  STATUSES = [:Need_an_imam, :no_need]
 
   validates :name, :city, :village,  presence: true
   belongs_to :user
